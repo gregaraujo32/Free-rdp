@@ -1,0 +1,22 @@
+nome: TOOLBOXLAP
+
+sobre:
+  despacho de fluxo de trabalho:
+
+empregos:
+  construir:
+    Nome: Iniciar Construção...
+    executa em: windows-latest
+    tempo limite em minutos: 360
+    
+    passos:
+      - nome: Baixando e Instalando o Essentials
+        executar: |
+          Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - nome: Mostrar site
+        executar: cmd /c show.bat
+
+      - nome: Contador de Tempo
+        executar: cmd /c loop.bat
